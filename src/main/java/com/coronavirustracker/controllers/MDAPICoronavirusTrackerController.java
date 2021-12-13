@@ -37,7 +37,7 @@ public class MDAPICoronavirusTrackerController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateMarylandaData(@PathVariable Long id, @Valid @RequestBody MDAPICoronavirusTracker tracker) {
+    public ResponseEntity<Object> updateMarylandData(@PathVariable Long id, @Valid @RequestBody MDAPICoronavirusTracker tracker) {
         return ResponseEntity.ok(mDAPICoronavirusTrackerService.updateMDTrackerData(id, tracker));
     }
 

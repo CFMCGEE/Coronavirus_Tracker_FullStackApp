@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import React, {useEffect, useState} from 'react';
+import {Map, Marker, Popup, TileLayer} from "react-leaflet";
 import DEAPITrackerService from '../services/DEAPITrackerService';
 import MDAPITrackerService from '../services/MDAPITrackerService';
 import PAAPITrackerService from '../services/PAAPITrackerService';
@@ -8,26 +8,21 @@ import Grid from '@mui/material/Grid';
 
 // eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
-import { Line } from "react-chartjs-2";
-import {Chart, ArcElement} from 'chart.js'
+import {Line} from "react-chartjs-2";
+import {ArcElement, Chart} from 'chart.js'
+
 Chart.register(ArcElement);
 
 const COVIDTrackerCompoent = () => {
 
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet" />
 
-    useEffect(() => {
-  
-      getAllDelawareData();
-      getAllMarylandData();
-      getAllPennsylvaniadData();
+    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const youtubeVideoIDS = ['xiS6c-eBNKA', 'rLY174n_KWA', '2KlzTEl8ATo', 'ZfdOltzpp3s', 'JWMkeMA3sfA', 'IA4UeltYUiw', 'Ug9xQ7LQnsw', '_JRWWJZEl_o', 'yc_LYdRyEAw', 'jUDL7VHN5yE']
 
-       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    const onMove = (e) => {
-        console.log(e.target.getCenter());
-      }
+    // const onMove = (e) => {
+    //     console.log(e.target.getCenter());
+    //   }
 
     const DElocation = [39.15005415636659, -75.50628662109376]
     const [delawareCases, setDelawareCases] = useState('');
@@ -52,6 +47,8 @@ const COVIDTrackerCompoent = () => {
     const [pennsylvaniaNegativeTests, setPennsylvaniaNegativeTests] = useState('');
     const [pennsylvaniaState, setPennsylvaniaState] = useState('');
     const [pennsylvaniaPopulation, setPennsylvaniaPopulation] = useState('');
+
+    const [youtubeID, setYoutubeID] = useState('IA4UeltYUiw');
              
       const getAllDelawareData = () => {
         
@@ -109,14 +106,31 @@ const COVIDTrackerCompoent = () => {
         })
 
       }
-  
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  
+
+    useEffect(() => {
+
+        getAllDelawareData();
+        getAllMarylandData();
+        getAllPennsylvaniadData();
+
+        setInterval(() => {
+
+            const randomYTID = youtubeVideoIDS[Math.floor(Math.random() * youtubeVideoIDS.length)];
+
+            setYoutubeID(randomYTID);
+
+            console.log(`Watch the randomly picked video on YouTube: https://www.youtube.com/watch?v=${randomYTID}`);
+
+        }, 10000);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
       return (
-  
+
         <div>
          <div className="video-positioner">
-        {<YoutubeEmbed embedId="IA4UeltYUiw" />}
+        {<YoutubeEmbed embedId={youtubeID} />}
         </div>
         <Grid style={{ marginTop: "30px", marginLeft: "150px" }} container spacing={0}>
         <Grid item sm>
@@ -203,7 +217,7 @@ const COVIDTrackerCompoent = () => {
       minZoom={8}
       maxZoom={10}
       zoomControl={false}
-      onMoveEnd={onMove.bind(this)}
+      // onMoveEnd={onMove.bind(this)}
       dragging={false} 
       scrollWheelZoom={false}
       doubleClickZoom={false}
@@ -307,7 +321,7 @@ const COVIDTrackerCompoent = () => {
       minZoom={8}
       maxZoom={10}
       zoomControl={false}
-      onMoveEnd={onMove.bind(this)}
+      // onMoveEnd={onMove.bind(this)}
       dragging={false} 
       scrollWheelZoom={false}
       doubleClickZoom={false}
@@ -411,7 +425,7 @@ const COVIDTrackerCompoent = () => {
       minZoom={7}
       maxZoom={10}
       zoomControl={false}
-      onMoveEnd={onMove.bind(this)}
+      // onMoveEnd={onMove.bind(this)}
       dragging={false} 
       scrollWheelZoom={false}
       doubleClickZoom={false}

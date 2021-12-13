@@ -243,3 +243,20 @@ text-decoration:none;
  margin-left: 215px;
 
 }
+
+.new_tag {
+
+  background: red;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+  display: inline-block;
+  font-size: small;
+  font-weight: bold;
+  height: min-content;
+  padding: 0 6px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+}
