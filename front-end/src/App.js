@@ -33,7 +33,7 @@ const App = () => {
           
         </Routes>
 
-      </div> 
+      </div>
 
       <footer> <Footer /> </footer>
 
