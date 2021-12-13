@@ -260,3 +260,12 @@ text-decoration:none;
   vertical-align: middle;
 
 }
+
+.header_width {
+
+  width: 100%;
+  min-width: 500px;
+  max-width: 1900px;
+  box-sizing: border-box;
+
+}
