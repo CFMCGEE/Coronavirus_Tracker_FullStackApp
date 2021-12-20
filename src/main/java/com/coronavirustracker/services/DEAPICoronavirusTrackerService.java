@@ -4,6 +4,7 @@ import com.coronavirustracker.exceptions.GlobalException;
 import com.coronavirustracker.exceptions.details.success.Success;
 import com.coronavirustracker.models.DEAPIArrayCoronavirusTracker;
 import com.coronavirustracker.models.DEAPICoronavirusTracker;
+import com.coronavirustracker.models.PAAPICoronavirusTracker;
 import com.coronavirustracker.repositories.DEAPIArrayCoronavirusTrackerRepository;
 import com.coronavirustracker.repositories.DEAPICoronavirusTrackerRepository;
 import org.slf4j.Logger;
@@ -16,7 +17,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.*;
-import java.lang.System;
 
 @Service
 public class DEAPICoronavirusTrackerService {
