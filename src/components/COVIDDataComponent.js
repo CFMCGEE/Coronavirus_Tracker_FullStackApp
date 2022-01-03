@@ -191,7 +191,7 @@ const COVIDTrackerCompoent = () => {
                 },
                   subtitle: {
                     display: true,
-                    text: 'January 2021 - Current Day',
+                    text: 'January 2021 - December 2021',
                     color: 'black',
                     font: {
                       size: 15,
@@ -295,7 +295,7 @@ const COVIDTrackerCompoent = () => {
                 },
                   subtitle: {
                     display: true,
-                    text: 'January 2021 - Current Day',
+                    text: 'January 2021 - December 2021',
                     color: 'black',
                     font: {
                       size: 15,
@@ -399,7 +399,7 @@ const COVIDTrackerCompoent = () => {
                 },
                   subtitle: {
                     display: true,
-                    text: 'January 2021 - Current Day',
+                    text: 'January 2021 - December 2021',
                     color: 'black',
                     font: {
                       size: 15,
